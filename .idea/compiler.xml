@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="edu-bom" />
+        <module name="edu-eureka-boot" />
+        <module name="edu-common" />
+        <module name="edu-config-boot" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="edu-bom" target="1.5" />
+      <module name="edu-common" target="1.5" />
+      <module name="edu-config-boot" target="16" />
+      <module name="edu-eureka-boot" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
