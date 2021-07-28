@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OnlineEducationPlatform.iml" filepath="$PROJECT_DIR$/.idea/OnlineEducationPlatform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edu-ad-boot/edu-ad-boot.iml" filepath="$PROJECT_DIR$/edu-ad-boot/edu-ad-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-bom/edu-bom.iml" filepath="$PROJECT_DIR$/edu-bom/edu-bom.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-common/edu-common.iml" filepath="$PROJECT_DIR$/edu-common/edu-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/edu-config-boot/edu-config-boot.iml" filepath="$PROJECT_DIR$/edu-config-boot/edu-config-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edu-bom/edu-config-boot/edu-config-boot.iml" filepath="$PROJECT_DIR$/edu-bom/edu-config-boot/edu-config-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-eureka-boot/edu-eureka-boot.iml" filepath="$PROJECT_DIR$/edu-eureka-boot/edu-eureka-boot.iml" />
     </modules>
   </component>

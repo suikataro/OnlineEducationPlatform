@@ -6,17 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="edu-bom" />
+        <module name="edu-ad-boot" />
         <module name="edu-eureka-boot" />
         <module name="edu-common" />
         <module name="edu-config-boot" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="edu-bom" target="1.5" />
-      <module name="edu-common" target="1.5" />
-      <module name="edu-config-boot" target="16" />
-      <module name="edu-eureka-boot" target="1.5" />
+    <bytecodeTargetLevel target="8">
+      <module name="edu-ad-boot" target="1.8" />
+      <module name="edu-bom" target="1.8" />
+      <module name="edu-common" target="8" />
+      <module name="edu-config-boot" target="1.8" />
+      <module name="edu-eureka-boot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
