@@ -8,9 +8,13 @@ import com.learning.edu.ad.service.IPromotionSpaceService;
 import com.learning.edu.dto.PromotionAdDTO;
 import com.learning.edu.dto.PromotionSpaceDTO;
 import com.learning.edu.remote.AdRemoteService;
+import com.learning.edu.resonse.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.learning.edu.util.ConvertUtil;
 
@@ -67,5 +71,72 @@ public class AdRemoteServiceImpl implements AdRemoteService {
         }
 
         return promotionSpaceDTOList;
+    }
+
+    @PostMapping("/space/saveOrUpdateSpace")
+    public ResponseDTO saveOrUpdateSpace(@RequestBody PromotionSpaceDTO spaceDTO) {
+        PromotionSpace entity = ConvertUtil.convert(spaceDTO, PromotionSpace.class);
+
+        if(entity.getId() == null){
+            entity.setCreateTime(new Date());
+            entity.setUpdateTime(new Date());
+            entity.setIsDel(0);
+        }else {
+            entity.setUpdateTime(new Date());
+        }
+
+        ResponseDTO responseDTO = null;
+        try {
+            promotionSpaceService.saveOrUpdate(entity);
+            responseDTO = ResponseDTO.success();
+        }catch (Exception e){
+            responseDTO = ResponseDTO.ofError(e.getMessage());
+            e.printStackTrace();
+        }
+        return responseDTO;
+    }
+
+    @GetMapping("/space/getSpaceById")
+    public PromotionSpaceDTO getSpaceById(@RequestParam("id") Integer id) {
+        PromotionSpace promotionSpace = promotionSpaceService.getById(id);
+        return ConvertUtil.convert(promotionSpace,PromotionSpaceDTO.class);
+    }
+
+    @GetMapping("/getAllAds")
+    public List<PromotionAdDTO> getAllAds() {
+        List<PromotionAd> promotionAdList = promotionAdService.list();
+        return ConvertUtil.convertList(promotionAdList,PromotionAdDTO.class);
+    }
+
+    @PostMapping("/saveOrUpdateAd")
+    public ResponseDTO saveOrUpdateAd(@RequestBody PromotionAdDTO adDTO) {
+        PromotionAd entity = ConvertUtil.convert(adDTO, PromotionAd.class);
+
+        System.out.println(adDTO.getStartTime());
+
+        if(entity.getId() == null){
+            entity.setStatus(1); //1: ad is up 0:ad down
+            entity.setCreateTime(new Date());
+            entity.setUpdateTime(new Date());
+
+        }else {
+            entity.setUpdateTime(new Date());
+        }
+
+        ResponseDTO responseDTO = null;
+        try {
+            promotionAdService.saveOrUpdate(entity);
+            responseDTO = ResponseDTO.success();
+        }catch (Exception e){
+            responseDTO = ResponseDTO.ofError(e.getMessage());
+            e.printStackTrace();
+        }
+        return responseDTO;
+    }
+
+    @GetMapping("/getAdById")
+    public PromotionAdDTO getAdById(@RequestParam("id") Integer id) {
+        PromotionAd promotionAd = promotionAdService.getById(id);
+        return ConvertUtil.convert(promotionAd,PromotionAdDTO.class);
     }
 }
