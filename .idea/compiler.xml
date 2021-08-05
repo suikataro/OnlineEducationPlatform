@@ -2,22 +2,32 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="edu-ad-boot" />
-        <module name="edu-eureka-boot" />
+        <module name="edu-boss-boot" />
         <module name="edu-common" />
         <module name="edu-config-boot" />
+        <module name="edu-ad-boot-impl" />
+        <module name="edu-front-boot" />
+        <module name="edu-gateway-boot" />
+        <module name="edu-ad-boot-api" />
+        <module name="edu-eureka-boot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="edu-ad-boot" target="1.8" />
+      <module name="edu-ad-boot-api" target="1.8" />
+      <module name="edu-ad-boot-impl" target="1.8" />
       <module name="edu-bom" target="1.8" />
+      <module name="edu-boss-boot" target="1.8" />
       <module name="edu-common" target="8" />
       <module name="edu-config-boot" target="1.8" />
       <module name="edu-eureka-boot" target="1.8" />
+      <module name="edu-front-boot" target="1.8" />
+      <module name="edu-gateway-boot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

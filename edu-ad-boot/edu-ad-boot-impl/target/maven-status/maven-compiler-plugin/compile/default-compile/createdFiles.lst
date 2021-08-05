@@ -1,0 +1,12 @@
+com/learning/edu/ad/controller/controller/PromotionSpaceController.class
+com/learning/edu/ad/controller/LearningAdApplication.class
+com/learning/edu/ad/controller/service/impl/PromotionAdServiceImpl.class
+com/learning/edu/ad/controller/mapper/PromotionAdMapper.class
+com/learning/edu/ad/controller/remote/AdRemoteServiceImpl.class
+com/learning/edu/ad/controller/controller/PromotionAdController.class
+com/learning/edu/ad/controller/entity/PromotionSpace.class
+com/learning/edu/ad/controller/entity/PromotionAd.class
+com/learning/edu/ad/controller/service/impl/PromotionSpaceServiceImpl.class
+com/learning/edu/ad/controller/mapper/PromotionSpaceMapper.class
+com/learning/edu/ad/controller/service/IPromotionAdService.class
+com/learning/edu/ad/controller/service/IPromotionSpaceService.class
